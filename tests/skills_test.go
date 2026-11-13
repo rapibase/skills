@@ -58,8 +58,8 @@ var expectedFiles = map[string][]string{
 	},
 	"rapibase-observe": {
 		"SKILL.md",
-		"references/config.md",
 		"references/errors.md",
+		"references/restart.md",
 	},
 }
 

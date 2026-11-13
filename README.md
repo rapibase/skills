@@ -52,7 +52,7 @@ skills/
                                                 rls, pgvector, email, webhooks, push, config
   rapibase-deploy/      SKILL.md + references/  site, github-actions, services, domains
   rapibase-functions/   SKILL.md + references/  runtime
-  rapibase-observe/     SKILL.md + references/  errors, config (restart)
+  rapibase-observe/     SKILL.md + references/  errors, restart
 tests/                  format and safety checks (go test ./...)
 ```
 
