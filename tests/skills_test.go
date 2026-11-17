@@ -65,6 +65,10 @@ var expectedFiles = map[string][]string{
 
 // ---------------------------------------------------------------- lint ---
 
+// skillsBadge is the one allowed absolute URL: the skills.sh badge in the
+// README. It points at the skills directory, not at Rapibase or the API.
+var skillsBadge = regexp.MustCompile(`^!\[skills\.sh\]\(https://skills\.sh/b/rapibase/skills\)$`)
+
 type rule struct {
 	name string
 	re   *regexp.Regexp
@@ -140,6 +144,9 @@ func TestLint(t *testing.T) {
 		for sc.Scan() {
 			n++
 			line := sc.Text()
+			if skillsBadge.MatchString(line) {
+				continue
+			}
 			for _, r := range lintRules {
 				if m := r.re.FindString(line); m != "" {
 					t.Errorf("%s:%d: %s %q", rel(f), n, r.name, m)

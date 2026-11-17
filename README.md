@@ -1,13 +1,21 @@
 # Rapibase Agent Skills
 
-Agent Skills for Rapibase, the agent-native backend, built on the open Agent Skills format.
+![skills.sh](https://skills.sh/b/rapibase/skills)
 
-> **Status:** in development. The skills ship together with the Rapibase CLI v0.1.
+Agent Skills for Rapibase, the agent-native backend, built on the open Agent Skills format.
 
 ## Installation
 
+All four skills:
+
 ```bash
 npx skills add rapibase/skills
+```
+
+One skill only:
+
+```bash
+npx skills add rapibase/skills --skill rapibase-backend
 ```
 
 With the Rapibase CLI (it carries these skills inside, so nothing is downloaded; `init` installs them
