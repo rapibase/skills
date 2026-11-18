@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "rapibase-backend-tools",
   "version": "0.1.0",
-  "description": "Build, deploy, and operate Rapibase projects with four skills and a remote MCP connection.",
+  "description": "Postgres, auth, pgvector, S3 storage, server functions, and app deployment in one backend.",
   "author": {
     "name": "Rapibase",
     "url": "https://rapibase.com"
@@ -13,19 +13,21 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Rapibase Backend",
-        "shortDescription": "Build and manage app backends",
-        "longDescription": "Create and manage Rapibase projects from a conversation. The skills guide database and authentication design, deployments, server functions, logs, and troubleshooting. Connect your Rapibase account with OAuth to use project tools. Actions are limited to projects and permissions you authorize.",
+        "displayName": "Rapibase",
+        "shortDescription": "Postgres, auth, S3 & deploy",
+        "longDescription": "Build and run apps with Postgres, authentication, pgvector, S3-compatible storage, server functions, and deployment in one Rapibase project. Four skills guide schema design, access rules, functions, releases, logs, and troubleshooting. Connect your Rapibase account with OAuth to use the MCP tools. The connection can reach only the projects and permissions you authorize.",
         "developerName": "Rapibase",
         "category": "Developer Tools",
         "capabilities": [
-          "Manage database schemas and rows",
+          "Manage Postgres and pgvector data",
+          "Configure authentication and access rules",
+          "Manage S3-compatible storage",
           "Deploy sites and services",
           "Create server functions",
           "Inspect logs and project status"
         ],
         "websiteURL": "https://rapibase.com",
-        "supportURL": "https://rapibase.com/support",
+        "supportURL": "https://rapibase.com/support.html",
         "privacyPolicyURL": "https://rapibase.com/privacy",
         "termsOfServiceURL": "https://rapibase.com/terms",
         "defaultPrompt": [
