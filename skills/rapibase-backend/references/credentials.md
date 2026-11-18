@@ -28,10 +28,9 @@ use them only when the person asks for them by name.
 
 If there is neither a CLI session nor the MCP, ask the person to run `npx rapibase@latest init` or to
 connect the MCP (the project's Connect tab in the console) instead of asking for keys. On a server or in
-CI without a browser, OAuth is replaced by a **server token** the person creates in the console (Agents →
-Tokens for servers and CI) and leaves in the environment variable `RAPIBASE_TOKEN`: the CLI reads it, and
-an MCP config (pointed at the account MCP address that the console's Connect tab shows) references it as
-the header `Authorization: Bearer ${RAPIBASE_TOKEN}`. Never ask them to paste that token to you.
+CI without a browser, the person can create a **server token** in the console (Agents → Tokens for
+servers and CI) and configure it as `RAPIBASE_TOKEN` for the CLI in the server environment. Never read,
+print, copy, or ask them to paste that token into the chat or a plugin configuration.
 
 Tokens in CI, and what each one reaches:
 

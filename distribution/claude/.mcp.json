@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "rapibase": {
+      "type": "http",
+      "url": "https://rapibase.com/mcp"
+    }
+  }
+}

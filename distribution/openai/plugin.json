@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rapibase-backend-tools",
+  "version": "0.1.0",
+  "description": "Build, deploy, and operate Rapibase projects with four skills and a remote MCP connection.",
+  "author": {
+    "name": "Rapibase",
+    "url": "https://rapibase.com"
+  },
+  "homepage": "https://rapibase.com",
+  "repository": "https://github.com/rapibase/skills",
+  "license": "MIT",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Rapibase Backend",
+        "shortDescription": "Build and manage app backends",
+        "longDescription": "Create and manage Rapibase projects from a conversation. The skills guide database and authentication design, deployments, server functions, logs, and troubleshooting. Connect your Rapibase account with OAuth to use project tools. Actions are limited to projects and permissions you authorize.",
+        "developerName": "Rapibase",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Manage database schemas and rows",
+          "Deploy sites and services",
+          "Create server functions",
+          "Inspect logs and project status"
+        ],
+        "websiteURL": "https://rapibase.com",
+        "supportURL": "https://rapibase.com/support",
+        "privacyPolicyURL": "https://rapibase.com/privacy",
+        "termsOfServiceURL": "https://rapibase.com/terms",
+        "defaultPrompt": [
+          "Show my Rapibase projects and their status.",
+          "Help me design a database for my app.",
+          "Find errors in my Rapibase project logs."
+        ],
+        "brandColor": "#2D6B45",
+        "brandColorDark": "#B9E4A7",
+        "composerIcon": "./assets/composer-icon.png",
+        "composerIconDark": "./assets/composer-icon-dark.png",
+        "logo": "./assets/logo.png",
+        "logoDark": "./assets/logo-dark.png"
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 name: rapibase-backend
 description: Postgres database, user auth, file storage, realtime and push for apps built with coding agents, on Rapibase. Covers schema and SQL, row level security, REST and RPC, sign-up and login (email, magic link, Google, Apple, GitHub, Facebook), storage buckets and access rules, realtime subscriptions, pgvector search, webhooks, push notifications and instance settings. Use when the app needs a backend and the user chose Rapibase or the project already uses it (a .rapibase/project.json or RAPIBASE_* variables).
 metadata:
-  version: "0.1.3"
+  version: "0.1.4"
 ---
 
 # Rapibase backend

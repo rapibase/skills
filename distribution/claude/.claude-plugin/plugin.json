@@ -1,0 +1,14 @@
+{
+  "name": "rapibase-backend-tools",
+  "displayName": "Rapibase Backend",
+  "version": "0.1.0",
+  "description": "Build, deploy, and operate Rapibase projects with four workflow skills and an OAuth MCP connection.",
+  "author": {
+    "name": "Rapibase",
+    "url": "https://rapibase.com"
+  },
+  "license": "MIT",
+  "icon": ".claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://rapibase.com/privacy",
+  "mcpServers": "./.mcp.json"
+}
