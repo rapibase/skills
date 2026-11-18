@@ -1,7 +1,7 @@
 {
   "name": "rapibase-backend-tools",
-  "displayName": "Rapibase Backend",
-  "version": "0.1.0",
+  "displayName": "Rapibase - Auth, Storage, Functions & Deploy",
+  "version": "0.1.1",
   "description": "Build, deploy, and operate Rapibase projects with four workflow skills and an OAuth MCP connection.",
   "author": {
     "name": "Rapibase",

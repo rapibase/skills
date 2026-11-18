@@ -1,4 +1,4 @@
-# Rapibase Backend
+# Rapibase - Auth, Storage, Functions & Deploy
 
 This plugin helps coding agents build and operate projects on Rapibase. Its four skills cover database and auth design, frontend and service deployment, TypeScript functions, and production troubleshooting. They guide the agent through the Rapibase CLI or the connected MCP tools, according to the available session and the user's request.
 
