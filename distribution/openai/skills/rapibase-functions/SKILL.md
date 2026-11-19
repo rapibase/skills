@@ -7,6 +7,11 @@ metadata:
 
 # Rapibase functions
 
+In this OpenAI plugin, use the named MCP tools `list_functions`, `get_function`,
+`delete_function`, `deploy_functions`, and `list_jobs`. The generic `api_*`
+MCP tools mentioned in older examples are not advertised; use the CLI for
+other instance API operations when a local CLI session is available.
+
 ## Setup
 
 This block is the same in every Rapibase skill (rapibase-backend, rapibase-deploy, rapibase-functions,

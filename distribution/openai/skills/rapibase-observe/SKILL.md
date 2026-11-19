@@ -7,6 +7,11 @@ metadata:
 
 # Rapibase observe
 
+In this OpenAI plugin, use `get_instance_health` and
+`get_realtime_metrics` for those checks. Generic `api_*` MCP tools in older
+examples are not advertised; use the CLI for other instance API operations
+when a local CLI session is available.
+
 ## Setup
 
 This block is the same in every Rapibase skill (rapibase-backend, rapibase-deploy, rapibase-functions,

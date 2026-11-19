@@ -41,6 +41,59 @@
         "composerIconDark": "./assets/composer-icon-dark.png",
         "logo": "./assets/logo.png",
         "logoDark": "./assets/logo-dark.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "The reviewer account has one running Rapibase review project authorized through OAuth. Verify account-scoped project discovery and status without exposing credentials.",
+              "prompt": "Show the Rapibase projects this connection can access and tell me which are running.",
+              "tools_triggered": "list_projects",
+              "expected_behavior": "Call list_projects once. Report only the projects, access modes, and statuses returned by the tool. Do not invent projects or show API keys."
+            },
+            {
+              "description": "The authorized review project contains a sample table named review_items with columns id and name and at least two sample rows. Verify schema discovery and a read-only data query.",
+              "prompt": "In my Rapibase review project, describe the review_items table and show its first two rows.",
+              "tools_triggered": "list_projects, describe_table, query_rows",
+              "expected_behavior": "Use list_projects to obtain the authorized project slug. Call describe_table with that project and table=review_items, then query_rows with the same project, table=review_items, page=1, and page_size=2. Report column types and only the rows actually returned."
+            },
+            {
+              "description": "The same review project grants write access and its review_items table accepts a name value. Verify a user-requested insert and readback of sample data.",
+              "prompt": "Add a sample item named OpenAI review item to the review_items table in my Rapibase review project, then show me the inserted row.",
+              "tools_triggered": "list_projects, describe_table, insert_row",
+              "expected_behavior": "Resolve the authorized review project with list_projects. Use describe_table if needed, then call insert_row with project set to that slug, table=review_items, and data containing name='OpenAI review item'. Show the row returned by insert_row, including its generated id if present. Never claim insertion if the tool reports an error."
+            },
+            {
+              "description": "The reviewer account can inspect storage in its authorized review project. This case works whether or not the project has buckets.",
+              "prompt": "List the storage buckets in my Rapibase review project and summarize their access settings and usage.",
+              "tools_triggered": "list_projects, list_buckets",
+              "expected_behavior": "Resolve the review project using list_projects and call list_buckets with its project slug. Report only returned bucket settings and usage. If there are no buckets, state that the list is empty; do not invent buckets or files."
+            },
+            {
+              "description": "The reviewer account can inspect the review project's server functions, frontend releases, and recent app logs. Verify deployment and operational inspection without publishing a new release.",
+              "prompt": "Check my Rapibase review project: what server functions and frontend releases are there, and do the recent app logs show errors?",
+              "tools_triggered": "list_projects, list_functions, list_deploys, get_logs",
+              "expected_behavior": "Resolve the authorized review project with list_projects. Call list_functions, list_deploys, and get_logs for the same project (container='app'). Summarize only the returned functions, releases, and log errors. If a list is empty or logs show no errors, say so; do not claim a deployment occurred."
+            }
+          ],
+          "negative": [
+            {
+              "description": "A request about another backend provider. Explain that the Rapibase connection cannot inspect Supabase projects; do not call any Rapibase MCP tool or invent access.",
+              "prompt": "Show me the tables in my Supabase project. I have not connected Supabase here."
+            },
+            {
+              "description": "A deployment request for a different hosting provider. Explain that the Rapibase connection cannot deploy to Vercel; do not call any Rapibase MCP tool or claim a deployment.",
+              "prompt": "Deploy my website to Vercel and give me its production URL."
+            },
+            {
+              "description": "A domain-management request outside Rapibase. Explain that changing Cloudflare DNS requires access to Cloudflare; do not call any Rapibase MCP tool or claim a DNS change.",
+              "prompt": "Change the DNS records for my domain in Cloudflare to point to a new server."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "Initial release of Rapibase backend tools: guidance for Postgres, authentication, storage, server functions, deployment, and troubleshooting, with account-scoped MCP access through OAuth."
       }
     }
   }

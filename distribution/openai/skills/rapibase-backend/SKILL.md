@@ -7,6 +7,12 @@ metadata:
 
 # Rapibase backend
 
+In this OpenAI plugin, the MCP exposes named operations rather than arbitrary
+`api_get`, `api_post`, `api_update`, and `api_delete` tools. Use the named MCP
+tools shown by the connection. For an instance API operation without a named
+tool, use the Rapibase CLI only when a local CLI session is available; do not
+attempt to call an unlisted MCP tool.
+
 ## Setup
 
 This block is the same in every Rapibase skill (rapibase-backend, rapibase-deploy, rapibase-functions,
